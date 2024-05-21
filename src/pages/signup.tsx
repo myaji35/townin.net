@@ -1,15 +1,20 @@
 import React, { useState } from 'react';
 
-export function Signup() {
-  const [username, setUsername] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    // 회원가입 로직을 여기에 추가하세요. 예: API 호출
-    console.log('회원가입 정보:', { username, email, password });
-  };
+export default function Signup() {  // 수정된 부분
+    const [username, setUsername] = useState('');
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+  
+    const handleSubmit = async (event) => {
+      event.preventDefault();
+  
+      try {
+        const response = await axios.post('/api/signup', { username, email, password });
+        console.log('회원가입 성공:', response.data);
+      } catch (error) {
+        console.error('회원가입 실패:', error);
+      }
+    };
 
   return (
     <div className="max-w-md mx-auto mt-10">

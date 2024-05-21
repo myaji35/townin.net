@@ -22,7 +22,7 @@ export function Navbar() {
             <Link href="/signin" className="text-white hover:text-gray-300 px-3">
               로그인
             </Link>
-            <Link href="../../../app/pages/signup" className="text-white hover:text-gray-300 px-3">
+            <Link href="/signup" className="text-white hover:text-gray-300 px-3">
               회원가입
             </Link>
           </div>
