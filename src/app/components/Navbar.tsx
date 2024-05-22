@@ -1,31 +1,20 @@
 import Link from "next/link";
+import { ThemeToggle } from "./ThemeToggle";
 
-export function Navbar() {
+export async function Navbar() {
+
   return (
-    <nav className="bg-gray-800 text-white">
-      <div className="max-w-screen-xl mx-auto px-4">
-        <div className="flex justify-between items-center py-3">
-          <Link href="/" className="text-white hover:text-gray-300">
-            <span className="text-xl">Town</span>
-            <span className="text-primary-foreground hover:text-primary/90 text-xl">in</span>
-          </Link>
-          <div>
-            <Link href="/news" className="text-white hover:text-gray-300 px-3">
-              뉴스
-            </Link>
-            <Link href="/contact" className="text-white hover:text-gray-300 px-3">
-              연락처
-            </Link>
-            <Link href="/about" className="text-white hover:text-gray-300 px-3">
-              정보
-            </Link>
-            <Link href="/signin" className="text-white hover:text-gray-300 px-3">
-              로그인
-            </Link>
-            <Link href="/signup" className="text-white hover:text-gray-300 px-3">
-              회원가입
-            </Link>
-          </div>
+    <nav className="border-b bg-background h-[10vh] flex items-center">
+      <div className="container flex items-center justify-between">
+        <Link href="/">
+          <h1 className="font-bold text-3xl">
+            Town<span className="text-primary">in</span>
+          </h1>
+        </Link>
+
+        <div className="flex items-center gap-x-5">
+          <ThemeToggle />
+
         </div>
       </div>
     </nav>
