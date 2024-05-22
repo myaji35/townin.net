@@ -1,9 +1,14 @@
+
 import Link from "next/link";
 import { ThemeToggle } from "./Themetoggle";
+
 import { Button } from "./ui/button";
+import {
+  RegisterLink,
+  LoginLink,
+} from "@kinde-oss/kinde-auth-nextjs/components";
 
-export async function Navbar() {
-
+export function Navbar() {
   return (
     <nav className="border-b bg-background h-[10vh] flex items-center">
       <div className="container flex items-center justify-between">
@@ -17,8 +22,10 @@ export async function Navbar() {
           <ThemeToggle />
 
           <div className="flex items-center gap-x-5">
-            <button>Sign In</button>
-            <button>Sign Up</button>
+            <LoginLink>Sign In</LoginLink>
+            <RegisterLink>
+              <Button variant="secondary">Sign Up</Button>
+            </RegisterLink>
           </div>
 
         </div>
@@ -26,3 +33,4 @@ export async function Navbar() {
     </nav>
   );
 }
+
